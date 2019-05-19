@@ -60,7 +60,7 @@ footer a:visited {
 }
   </style>
   <script>
-    const CAT_API = "https://api.thecatapi.com/v1/images/search?size=full";
+const CAT_API = "https://api.thecatapi.com/v1/images/search?size=full";
 const CAT_API_KEY = '7b93a304-6ce3-4e0f-895a-1e80ee6fd9c0';
 const QUOTE_API = "https://api.github.com/zen";
 
@@ -95,22 +95,15 @@ function loadCatQuote() {
   XHR.setRequestHeader('x-api-key', CAT_API_KEY);
   XHR.send();
 }
-const btn = document.querySelector('#btn');
-btn.addEventListener("click", loadCatQuote);
-
-
-window.onload = () => {
-  loadCatQuote();
-}
   </script>
 </head>
-<body>
+<body onload="loadCatQuote()">
   
 <div class="container">
   <h1>Zen Cat Quote Of The Day</h1>
   <blockquote id="quote"></blockquote>
   <img id="photo" alt='zen cat'></img>
-  <button id="btn">Generate Random Zen Cat Quote</button>
+  <button id="btn" onclick="loadCatQuote()">Generate Random Zen Cat Quote</button>
 </div>
 <footer>Zen quote courtesy of <a href="https://api.github.com/zen">GitHub</a>.  Cat pictures courtesy of <a href="https://api.thecatapi.com/v1/images/search">The Cat API.</a></footer>
 </body>
