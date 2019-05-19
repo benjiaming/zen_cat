@@ -1,5 +1,108 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<style>
+#photo {
+  display: none;
+}
+
+h1 {
+  font-family: "Quicksand", sans-serif
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 10px rgba(68, 68, 68, 0.6);
+  background-color: #3f51b5;
+  color: #fff;
+  font-size: 20px;
+  outline: none;
+}
+button:active {
+  box-shadow: none;
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
+}
+
+footer {
+  margin-top: 30px;
+  background-color: #ddd;
+  padding: 10px;
+  text-align: center;
+}
+footer a:visited {
+  color: blue;
+}
+  </style>
+  <script>
+    const CAT_API = "https://api.thecatapi.com/v1/images/search?size=full";
+const CAT_API_KEY = '7b93a304-6ce3-4e0f-895a-1e80ee6fd9c0';
+const QUOTE_API = "https://api.github.com/zen";
+
+function loadCatQuote() {
+// [{"breeds":[],"id":"aci","url":"https:cdn2.thecatapi.com/images/aci.jpg","width":560,"height":413}]
+  const XHR = new XMLHttpRequest();
+  XHR.onreadystatechange = () => {
+    console.log(XHR.readyState + ' ' + XHR.status);
+    if (XHR.readyState == 4 && XHR.status == 200) {
+      const data = JSON.parse(XHR.responseText);
+      const photo = document.querySelector('#photo');
+      const img = new Image(data[0].width, data[0].height);
+      img.src = data[0].url;
+      photo.src = img.src;
+      photo.height = data[0].height;
+      photo.width = data[0].width;
+      photo.style.display = "block";
+      
+      const XHRq = new XMLHttpRequest();
+      XHRq.onreadystatechange = () => {
+        console.log(XHRq.readyState + ' ' + XHRq.status);
+        if (XHRq.readyState == 4 && XHRq.status == 200) {
+          const quote = document.querySelector('#quote');
+          quote.innerText = XHRq.responseText;
+        }
+      }
+      XHRq.open("GET", QUOTE_API);
+      XHRq.send();
+    } 
+  }
+  XHR.open("GET", CAT_API, true);
+  XHR.setRequestHeader('x-api-key', CAT_API_KEY);
+  XHR.send();
+}
+const btn = document.querySelector('#btn');
+btn.addEventListener("click", loadCatQuote);
+
+
+window.onload = () => {
+  loadCatQuote();
+}
+  </script>
 </head>
 <body>
   
