@@ -1,5 +1,4 @@
-# zen_cat 
-## Zen Cat Quote of the Day
+# zen_cat: Zen Cat Quote of the Day
 
 This is a :octocat: Random Cat + random Zen quote mini-project to demonstrate five different ways of using JSON APIs in modern JavaScript (from most complex to simplest).
 * Traditional AJAX using XMLHttpRequest: <a href="https://codepen.io/benjiaming/full/pmrzBq/">XMLHttpRequest CodePen</a>
