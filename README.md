@@ -7,4 +7,6 @@ This is a :octocat: Random Cat + random Zen quote mini-project demonstrating dif
 * axios: <a href="https://codepen.io/benjiaming/full/MdvaLa">axios CodePen</a>
 * ES2017 async/await: <a href="https://codepen.io/benjiaming/full/arVaJm">JQuery AJAX + async/await</a>
 
-![](https://cdn2.thecatapi.com/images/5p0.jpg)
+<div align="center">
+  <img src="https://cdn2.thecatapi.com/images/5p0.jpg" alt="cat" width="300px">
+ </div>
