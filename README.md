@@ -5,7 +5,8 @@ This is a :octocat: Random Cat + random Zen quote mini-project demonstrating dif
 * ES6 Fetch API: <a href="https://codepen.io/benjiaming/full/joLPzx">Fetch API CodePen</a>
 * JQuery: <a href="https://codepen.io/benjiaming/full/QRMjgo">JQuery AJAX CodePen</a>
 * axios: <a href="https://codepen.io/benjiaming/full/MdvaLa">axios CodePen</a>
-* ES2017 async/await: <a href="https://codepen.io/benjiaming/full/arVaJm">JQuery AJAX + async/await</a>
+* ES2017 async/await + JQuery: <a href="https://codepen.io/benjiaming/full/arVaJm">JQuery AJAX + async/await</a>
+* ES2017 async/await + Fetch API: <a href="https://codepen.io/benjiaming/full/arVaJm">Fetch API + async/await</a>https://codepen.io/benjiaming/full/yWGVrz
 
 <div align="center">
   <img src="https://cdn2.thecatapi.com/images/5p0.jpg" alt="cat" width="300px">
